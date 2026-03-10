@@ -44,11 +44,10 @@ As tecnologias e ferramentas abaixo serão utilizadas no desenvolvimento do proj
 
 Responsável pela interface e experiência do usuário.
 
-- [Tecnologia a definir]
-- [Tecnologia a definir]
-- [Tecnologia a definir]
+- HTML
+- Tailwind css
 
-Responsáveis: André Luis, Gustavo Alves e Felipe Stuque.
+Responsáveis: André Luis e Gustavo Alves.
 
 ---
 
@@ -56,8 +55,8 @@ Responsáveis: André Luis, Gustavo Alves e Felipe Stuque.
 
 Responsável pela lógica de negócio, regras do sistema e integração com o banco de dados.
 
-- [Tecnologia a definir]
-- [Framework a definir]
+- Next.js
+- APIs
 
 Responsáveis: Lucas Vitor e Giovani Pomilio.
 
@@ -67,7 +66,7 @@ Responsáveis: Lucas Vitor e Giovani Pomilio.
 
 Responsável pelo armazenamento, modelagem e manipulação dos dados do sistema.
 
-- [Tecnologia a definir]
+- PostgreSQL
 
 Responsáveis: Filipe Damasio.
 
