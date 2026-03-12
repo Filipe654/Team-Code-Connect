@@ -1,2 +1,58 @@
 
-sdasdasdasafsadasda
+-- No Postgres, o banco de dados geralmente é criado separadamente.
+-- Se estiver no Query Tool do pgAdmin, certifique-se de estar conectado ao banco correto.
+
+CREATE TABLE veiculo (
+    id_placa VARCHAR(100) PRIMARY KEY NOT NULL,
+    modelo VARCHAR(45) NOT NULL,
+    cor VARCHAR(45) NOT NULL
+);
+
+CREATE TABLE multa (
+    id_infracao SERIAL PRIMARY KEY, -- SERIAL substitui o AUTO_INCREMENT
+    valor DECIMAL(10,2) NOT NULL, 
+    motivo VARCHAR(45) NOT NULL, 
+    data_emissao DATE NOT NULL
+);
+
+CREATE TABLE condutor (
+    id_condutor SERIAL PRIMARY KEY,
+    nome VARCHAR(45) NOT NULL,
+    telefone VARCHAR(20) NOT NULL, 
+    email VARCHAR(100) NOT NULL UNIQUE,
+    cpf VARCHAR(14) NOT NULL,      
+    id_placa VARCHAR(100),         
+    CONSTRAINT fk_veiculo FOREIGN KEY (id_placa) REFERENCES veiculo(id_placa)
+);
+
+CREATE TABLE evento_em_tempo_real (
+    id_evento SERIAL PRIMARY KEY,
+    placa_detectada VARCHAR(45) NOT NULL,
+    horario_entrada TIMESTAMP NOT NULL, -- DATETIME vira TIMESTAMP no Postgres
+    horario_saida TIMESTAMP NOT NULL,
+    id_infracao INT,               
+    CONSTRAINT fk_multa FOREIGN KEY (id_infracao) REFERENCES multa(id_infracao)
+);
+
+CREATE TABLE area_carga_e_descarga (
+    id_area SERIAL PRIMARY KEY,
+    status VARCHAR(45) NOT NULL,
+    tipo VARCHAR(45) NOT NULL
+);
+
+CREATE TABLE agendamento (
+    id_agendamento SERIAL PRIMARY KEY,
+    horario_inicio TIMESTAMP NOT NULL,
+    horario_saida TIMESTAMP NOT NULL,
+    status VARCHAR(45) NOT NULL, 
+    id_area INT,                   
+    CONSTRAINT fk_area FOREIGN KEY (id_area) REFERENCES area_carga_e_descarga(id_area)
+);
+
+CREATE TABLE Multa_has_condutor (
+    id_infracao INT NOT NULL,
+    id_condutor INT NOT NULL,
+    PRIMARY KEY (id_infracao, id_condutor),
+    CONSTRAINT fk_multa_rel FOREIGN KEY (id_infracao) REFERENCES multa(id_infracao),
+    CONSTRAINT fk_condutor_rel FOREIGN KEY (id_condutor) REFERENCES condutor(id_condutor)
+);
