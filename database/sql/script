@@ -1,6 +1,7 @@
 
 -- No Postgres, o banco de dados geralmente é criado separadamente.
 -- Se estiver no Query Tool do pgAdmin, certifique-se de estar conectado ao banco correto.
+-- teste
 
 CREATE TABLE veiculo (
     id_placa VARCHAR(100) PRIMARY KEY NOT NULL,
