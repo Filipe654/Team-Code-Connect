@@ -46,7 +46,7 @@ Responsável pela interface e experiência do usuário.
 
 - Vue.js
 
-Responsáveis: André Luis e Gustavo Alves.
+Responsáveis: André Luis.
 
 ---
 
@@ -57,7 +57,7 @@ Responsável pela lógica de negócio, regras do sistema e integração com o ba
 - Next.js
 - APIs
 
-Responsáveis: Lucas Vitor e Giovani Pomilio.
+Responsáveis: Lucas Vitor e Henrico Taiete.
 
 ---
 
@@ -77,7 +77,7 @@ Responsável pela construção de protótipos, fluxos de navegação e identidad
 
 - Figma e Canva
 
-Responsáveis: Gustavo Alves e Felipe Stuque.
+Responsáveis: Giovani Pomilio.
 
 ---
 
