@@ -45,6 +45,8 @@ As tecnologias e ferramentas abaixo serão utilizadas no desenvolvimento do proj
 Responsável pela interface e experiência do usuário.
 
 - Vue.js
+- Bootstrap 
+- Bootstrap Icon
 
 Responsáveis: André Luis.
 
